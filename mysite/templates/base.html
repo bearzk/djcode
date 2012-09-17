@@ -1,0 +1,14 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <center><h1>My test site</h1></center>
+    {% block content %}{% endblock %}
+    {% block footer %}
+    <hr>
+    <center><p>Thanks for visiting my site.</p></center>
+    {% endblock %}
+</body>
+</html>

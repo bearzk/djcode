@@ -1,0 +1,17 @@
+{% extends base.html %}
+{% block title %}Get and Post{% endblock %}
+{% block content%}
+{% ifequal request.method 'GET' %}
+    {% ifnotequal request.GET None%}
+        <p>you inputed <strong>{{ query }}</strong>.</p>
+    {% endifnotequal %}
+{% endifequal %}
+{% ifequal request.GET None %}
+<form action='' method='get'>
+    <input type='text' name='q'>
+    <input type='submit' name='GET'>
+</form>
+{% ifequal request.POST None %}
+<form action='' method='post'>
+    <input >
+{% endblock%}

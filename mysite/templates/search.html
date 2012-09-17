@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Search</title>
+</head>
+<body>
+	{% ifequal error 1 %}
+		<p style="color:red;">Please submit a search term.</p>
+	{% endifequal %}
+	{% ifequal error 2 %}
+		<p style="color:red;">Please submit a search term less than 40 characters.</p>
+	{% endifequal %}
+	<form action="" method="get">
+		<input type="text" name="q">
+		<input type="submit" value="Search">
+	</form>
+        {% ifequal error 3 %}
+        <p>You search for: <strong>{{ query }}</strong></p>
+{% if books %}
+	<p>Found {{ books|length }} book{{ books|pluralize}}.</p>
+	<ul>
+		{% for book in books %}
+		<li>{{ book.title }}</li>
+		{% endfor %}
+	</ul>
+{% else %}
+	<p>No books matched your search criteria.</p>
+{% endif %}
+{% endifequal %}
+</body>
+</html>
